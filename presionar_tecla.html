@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/Favicon-32x32.jpeg" type="image/x-icon">
+    <title>Presionando el teclado</title>
+
+</head>
+<body>
+    <div>
+        <a href="index.html">MENU</a>
+        <h1>Crea una página junto a un script que guarde dentro de una variable global un color dependiendo de la letra del teclado presionada. </h1>
+        <p>La letra a guardará el color rosado.<br>La letra s guardará el color naranjo.<br>La letra d guardará el color celeste.<br>Crea un nuevo div con el id “key”, de 200 px de ancho y alto y de color blanco y borde negro.<br>Al presionar las teclas a, s o d, se deberá cambiar el color del div “key” a rosado, naranjo o celeste respectivamente.
+        </p>
+
+
+        <details>
+            <summary>Respuesta</summary>
+            <h1>1.- Presiona una tecla para cambiar el color</h1>
+            <p>Presiona la tecla<br> "a" para rosado,<br> "s" para naranjo,<br> "d" para celeste.</p>
+
+            <div id="key" style="width: 200px; height: 200px; background-color: white; border: solid 2px black;"></div>
+
+            <h1>2.- Presiona una tecla y se creara un DIV con un color definido</h1>
+
+        </details>
+
+    </div>
+
+    <script>
+        // funcion para cambiar de color con las teclas
+       let color
+
+       document.addEventListener('keydown', function (event){
+        if (event.key === 'a' || event.key === 'A'){
+            color = 'pink'
+            key.style.backgroundColor = color;
+        } else if (event.key === 's' || event.key === 'S' ){
+            color = 'orange';
+            key.style.backgroundColor = color;
+        } else if (event.key === 'd' || event.key === 'D'){
+            color = 'lightblue';
+            key.style.backgroundColor = color;
+        }
+            
+        // creando Divs con las teclas
+        else if (event.key === 'q' || event.key === 'Q'){
+            color = 'purple';
+            crearDivs (color);
+        }
+        else if (event.key === 'w' || event.key === 'W'){
+            color = 'grey';
+            crearDivs (color);
+        }
+        else if (event.key === 'e' || event.key === 'E'){
+            color = 'brown';
+            crearDivs (color);
+        }
+
+
+        // configuracion de un Div desde JS
+        function crearDivs (){
+            let div = document.createElement ('div');
+            div.style.display= 'inline-block';
+            div.style.width = '200px';
+            div.style.height = '200px';
+            div.style.backgroundColor =color;
+            div.style.border = '2px solid black';
+            document.body.appendChild (div);
+        }
+       })
+
+    </script>
+
+
+    
+    
+</body>
+</html>

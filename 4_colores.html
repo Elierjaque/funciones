@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/Favicon-32x32.jpeg" type="image/x-icon">
+    <title>Pintando los Divs a Color Negro al hacer click</title>
+    <style>
+        .color-div {
+            width: 200px;
+            height: 200px;
+            margin: 6px;
+            display: inline-block;
+        }
+        #div1 { background-color: blue; }
+        #div2 { background-color: red; }
+        #div3 { background-color: green; }
+        #div4 { background-color: yellow; }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">MENU</a>
+
+<div id="div1" class="color-div"></div>
+<div id="div2" class="color-div"></div>
+<div id="div3" class="color-div"></div>
+<div id="div4" class="color-div"></div>
+
+<script>
+    // Aqui seleccione todos los divs con la clase 'color-div'
+const divs = document.querySelectorAll(".color-div");
+
+// Ahora se recorre cada div y se le añade un evento de clic para ejecutar la siguiente funcion.
+divs.forEach(div => {
+    div.addEventListener("click", () => {
+        // Aqui se le da la instruccion a que cambie el color de fondo del div a negro.
+        div.style.backgroundColor = "black";
+    });
+});
+</script>
+
+
+</body>
+</html>
